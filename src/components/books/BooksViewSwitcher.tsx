@@ -31,6 +31,7 @@ function BooksViewSwitcher() {
     if(!searchParams.get(QUERYSTRING.VIEW)) {
       handleSwitch("grid");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

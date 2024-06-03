@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import ThemeSwitcher from "../header/ThemeSwitcher";
 import logo from "../../assets/images/logo.png";
 import { FaRegUser, FaSignInAlt} from "react-icons/fa";
 import { Link } from "react-router-dom";

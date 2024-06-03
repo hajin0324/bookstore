@@ -1,11 +1,9 @@
-import styled from "styled-components";
 import Title from "../components/common/Title";
 import InputText from "../components/common/InputText";
 import Button from "../components/common/Button";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { login, signup } from "../api/auth.api";
+import { login } from "../api/auth.api";
 import { useAlert } from "../hooks/useAlert";
 import { SignupStyle } from "./Signup";
 import { useAuthStore } from "../store/authStore";
@@ -19,7 +17,7 @@ function Login() {
   const navigate = useNavigate();
   const showAlert = useAlert();
 
-  const { isloggedIn, storeLogin, storeLogout } = useAuthStore();
+  const { storeLogin } = useAuthStore();
 
   const { 
     register, 

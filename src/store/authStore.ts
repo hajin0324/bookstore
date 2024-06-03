@@ -1,6 +1,4 @@
 import { create } from "zustand";
-import { SignupProps } from "../pages/Signup";
-import { httpClient } from "../api/http";
 
 interface StoreState {
   isloggedIn: boolean;

@@ -1,14 +1,14 @@
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
-import ThemeSwitcher from "./components/header/ThemeSwitcher";
-import { useContext } from "react";
-import { BookStoreThemeProvider, ThemeContext } from "./context/themeContext";
+// import { useContext } from "react";
+import { BookStoreThemeProvider } from "./context/themeContext";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Error from "./components/common/Error";
 import Signup from "./pages/Signup";
 import ResetPassword from "./pages/ResetPassword";
 import Login from "./pages/Login";
 import Books from "./pages/Books";
+import BookDetail from "./pages/BookDetail";
 
 const router = createBrowserRouter([
   {
@@ -51,11 +51,19 @@ const router = createBrowserRouter([
       <Login />
     </Layout>
     )
+  },
+  {
+    path: "/books/:bookId",
+    element: (
+      <Layout>
+        <BookDetail />
+      </Layout>
+    )
   }
 ]);
 
 function App() {
-  const { themeName, toggleTheme } = useContext(ThemeContext);
+  // const { themeName, toggleTheme } = useContext(ThemeContext);
 
   return (
     <BookStoreThemeProvider>

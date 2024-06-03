@@ -9,8 +9,9 @@ function BooksFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const handleCategory = ( id: number | null ) => {
+    console.log(id);
     const newSearchParams = new URLSearchParams(searchParams);
-
+    console.log(newSearchParams);
     if(id === null) {
       newSearchParams.delete(QUERYSTRING.CATEGORY_ID);
     } else {
