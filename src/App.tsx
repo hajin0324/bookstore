@@ -1,6 +1,5 @@
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
-// import { useContext } from "react";
 import { BookStoreThemeProvider } from "./context/themeContext";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Error from "./components/common/Error";
@@ -11,6 +10,7 @@ import Books from "./pages/Books";
 import BookDetail from "./pages/BookDetail";
 import Cart from "./pages/Cart";
 import Order from "./pages/Order";
+import OrderList from "./pages/OrderList";
 
 const router = createBrowserRouter([
   {
@@ -77,12 +77,18 @@ const router = createBrowserRouter([
         <Order />
       </Layout>
     )
+  },
+  {
+    path: "/orderlist",
+    element: (
+      <Layout>
+        <OrderList />
+      </Layout>
+    )
   }
 ]);
 
 function App() {
-  // const { themeName, toggleTheme } = useContext(ThemeContext);
-
   return (
     <BookStoreThemeProvider>
       <RouterProvider router={router} />
