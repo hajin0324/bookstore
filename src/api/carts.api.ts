@@ -1,4 +1,4 @@
-import { Cart } from "../models/cart.model";
+import { Cart } from "@/models/cart.model";
 import { httpClient } from "./http";
 
 interface AddCartParams {

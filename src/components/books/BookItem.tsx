@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Book } from "../../models/book.model";
-import { getImgSrc } from "../../utils/images";
-import { formatNumber } from "../../utils/format";
+import { Book } from "@/models/book.model";
+import { getImgSrc } from "@/utils/images";
+import { formatNumber } from "@/utils/format";
 import { FaHeart } from "react-icons/fa";
 import { ViewMode } from "./BooksViewSwitcher";
 import { Link } from "react-router-dom";
@@ -9,15 +9,14 @@ import { Link } from "react-router-dom";
 interface Props {
   book: Book;
   view?: ViewMode;
-}
+};
 
 function BookItem({ book, view }: Props) {
   return (
     <BookItemStyle view={view}>
       <Link to={`/books/${book.id}`}>
         <div className="img">
-          <img 
-            src={getImgSrc(book.img)} alt={book.title} />
+          <img src={getImgSrc(book.img)} alt={book.title} />
         </div>
         <div className="content">
           <h2 className="title">{book.title}</h2>

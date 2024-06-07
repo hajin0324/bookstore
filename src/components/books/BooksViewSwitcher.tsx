@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "../common/Button";
 import { FaList, FaTh } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
-import { QUERYSTRING } from "../../constants/querystring";
+import { QUERYSTRING } from "@/constants/querystring";
 import { useEffect } from "react";
 
 const viewOptions = [
@@ -31,7 +31,6 @@ function BooksViewSwitcher() {
     if(!searchParams.get(QUERYSTRING.VIEW)) {
       handleSwitch("grid");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

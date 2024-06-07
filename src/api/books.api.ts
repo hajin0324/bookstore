@@ -1,5 +1,5 @@
-import { Book, BookDetail } from "../models/book.model";
-import { Pagination } from "../models/pagination.model";
+import { Book, BookDetail } from "@/models/book.model";
+import { Pagination } from "@/models/pagination.model";
 import { httpClient } from "./http";
 
 interface FetchBooksParams {
