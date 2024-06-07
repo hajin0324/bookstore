@@ -125,6 +125,10 @@ const BookDetailStyle = styled.div`
           width: 80px;
           color: ${({ theme }) => theme.color.secondary};
         }
+
+        a {
+          color: ${({ theme }) => theme.color.primary};
+        }
       }
     }
   }
