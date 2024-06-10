@@ -47,7 +47,7 @@ const bookInfoList = [
 
 function BookDetail() {
   const { bookId } = useParams();
-  const { book, likeToggle, reviews } = useBook(bookId);
+  const { book, likeToggle, reviews, addReview } = useBook(bookId);
 
   if(!book) return null;
   console.log(book);
@@ -92,8 +92,8 @@ function BookDetail() {
             {book.contents}
           </p>
 
-          <Title size="medium">라뷰</Title>
-          <BookReview reviews={reviews} />
+          <Title size="medium">리뷰</Title>
+          <BookReview reviews={reviews} onAdd={addReview}/>
         </div>
       </div>
     </BookDetailStyle>
