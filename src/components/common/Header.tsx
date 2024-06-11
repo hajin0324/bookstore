@@ -1,9 +1,11 @@
 import { styled } from "styled-components";
 import logo from "@/assets/images/logo.png";
-import { FaRegUser, FaSignInAlt} from "react-icons/fa";
+import { FaRegUser, FaSignInAlt, FaUserCircle} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useCategory } from "@/hooks/useCategory";
 import { useAuthStore } from "@/store/authStore";
+import Dropdown from "./Dropdown";
+import ThemeSwitcher from "../header/ThemeSwitcher";
 
 function Header() {
   const { category } = useCategory();
@@ -29,31 +31,34 @@ function Header() {
         </ul>
       </nav>
       <nav className="auth">
-        {
-          isloggedIn && (
-            <ul>
-              <li><Link to="/carts">장바구니</Link></li>
-              <li><Link to="/orderlist">주문 내역</Link></li>
-              <li><button onClick={storeLogout}>로그아웃</button></li>
-            </ul>
-          )
-        }
-        {
-          !isloggedIn && (
-            <ul>
-              <li>
-                <Link to="/login">
-                  <FaSignInAlt />로그인
-                </Link>
-              </li>
-              <li>
-                <Link to="/signup">
-                  <FaRegUser />회원가입
-                </Link>
-              </li>
-            </ul>
-          )
-        }
+        <Dropdown toggleButton={<FaUserCircle />}>
+          <>
+            {isloggedIn && (
+              <ul>
+                <li>
+                  <Link to="/carts">장바구니</Link>
+                </li>
+                <li>
+                  <Link to="/orderlist">주문 내역</Link>
+                </li>
+                <li>
+                  <button onClick={storeLogout}>로그아웃</button>
+                </li>
+              </ul>
+            )}
+            {!isloggedIn && (
+              <ul>
+                <li>
+                  <Link to="/login"><FaSignInAlt />로그인</Link>
+                </li>
+                <li>
+                  <Link to="/signup"><FaRegUser />회원가입</Link>
+                </li>
+              </ul>
+            )}
+            <ThemeSwitcher />
+          </>
+        </Dropdown>
       </nav>
     </HeaderStyle>
   );
@@ -98,7 +103,9 @@ const HeaderStyle = styled.header`
   .auth {
     ul {
       display: flex;
+      flex-direction: column;
       gap: 16px;
+      width: 100px;
       li {
         a, button {
           display: flex;
@@ -106,6 +113,8 @@ const HeaderStyle = styled.header`
           font-weight: 600;
           text-decoration: none;
           align-item: center;
+          justify-content: center;
+          width: 100px;
           line-height: 1;
           background: none;
           border: 0;
