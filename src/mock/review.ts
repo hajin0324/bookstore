@@ -2,7 +2,7 @@ import { BookReviewItem } from "@/models/book.model";
 import { http, HttpResponse } from "msw";
 import { fakerKO as faker } from "@faker-js/faker";
 
-const mockReviewData: BookReviewItem[] = Array.from({length: 8}).map((_, index) => ({
+const mockReviewData: BookReviewItem[] = Array.from({ length: 8 }).map((_, index) => ({
   id: index,
   userName: `${faker.person.lastName()}${faker.person.firstName()}`,
   content: faker.lorem.paragraph(),
@@ -10,13 +10,13 @@ const mockReviewData: BookReviewItem[] = Array.from({length: 8}).map((_, index) 
   score: faker.helpers.rangeToNumber({min: 1, max: 5})
 }));
 
-export const reviewsById = http.get("http://localhost:4400/reviews/:bookId", () => {
+export const reviewsById = http.get("http://localhost:4000/reviews/:bookId", () => {
   return HttpResponse.json(mockReviewData, {
     status: 200
   });
 });
 
-export const addReview = http.post("http://localhost:4400/reviews/:bookId", () => {
+export const addReview = http.post("http://localhost:4000/reviews/:bookId", () => {
   return HttpResponse.json(
     {
       message: "리뷰가 등록되었습니다."
@@ -27,7 +27,7 @@ export const addReview = http.post("http://localhost:4400/reviews/:bookId", () =
   )
 });
 
-export const reviewForMain = http.get("http://localhost:4400/reviews", () => {
+export const reviewForMain = http.get("http://localhost:4000/reviews", () => {
   return HttpResponse.json(mockReviewData, {
     status: 200
   }); 
