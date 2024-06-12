@@ -10,18 +10,18 @@ interface Props {
 
 function BookReview({ reviews, onAdd }: Props) {
   return (
-    <BookReviewstyle>
+    <BookReviewStyle>
       <BookReviewAdd onAdd={onAdd} />
       {
         reviews.map((review) => (
           <BookReviewItem review={review} />
         ))
       }
-    </BookReviewstyle>
+    </BookReviewStyle>
   );
 };
 
-const BookReviewstyle = styled.div`
+const BookReviewStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;

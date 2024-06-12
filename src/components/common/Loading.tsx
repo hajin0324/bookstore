@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 function Loading() {
   return (
-    <Loadingstyle>
+    <LoadingStyle>
       <FaSpinner />
-    </Loadingstyle>
+    </LoadingStyle>
   );
 };
 
-const Loadingstyle = styled.div`
+const LoadingStyle = styled.div`
   padding: 40px 0;
   text-align: center;
 

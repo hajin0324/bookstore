@@ -50,7 +50,7 @@ function Modal({ children, isOpen, onClose }: Props) {
   if (!isOpen) return null;
   
   return createPortal(
-    <Modalstyle 
+    <ModalStyle 
       className={isFadingOut ? "fade-out" : "fade-in"} 
       onClick={handleOverlayClick}
       onAnimationEnd={handleAnimationEnd}
@@ -61,12 +61,12 @@ function Modal({ children, isOpen, onClose }: Props) {
           <FaPlus />
         </button>
       </div>
-    </Modalstyle>,
+    </ModalStyle>,
     document.body
   );
 };
 
-const Modalstyle = styled.div`
+const ModalStyle = styled.div`
   @keyframes fade-in {
     from {
       opacity: 0;

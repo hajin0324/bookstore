@@ -26,12 +26,12 @@ function Dropdown({ children, toggleButton, isOpen = false }: Props) {
   }, [dropdownRef]);
 
   return (
-    <Dropdownstyle $open={open} ref={dropdownRef}>
+    <DropdownStyle $open={open} ref={dropdownRef}>
       <button className="toggle" onClick={() => setOpen(!open)}>
         {toggleButton}
       </button>
       {open && <div className="panel">{children}</div>}
-    </Dropdownstyle>
+    </DropdownStyle>
   );
 };
 
@@ -39,7 +39,7 @@ interface DropdownStyleProps {
   $open: boolean;
 };
 
-const Dropdownstyle = styled.div<DropdownStyleProps>`
+const DropdownStyle = styled.div<DropdownStyleProps>`
   position: relative;
 
   button {

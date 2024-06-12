@@ -21,17 +21,17 @@ function MainReview({ reviews }: Props) {
   }
 
   return (
-    <MainReviewstyle>
+    <MainReviewStyle>
       <Slider {...sliderSettings}>
         {reviews.map((review) => (
           <BookReviewItem key={review.id} review={review} />
         ))}
       </Slider>
-    </MainReviewstyle>
+    </MainReviewStyle>
   );
 };
 
-const MainReviewstyle = styled.div`
+const MainReviewStyle = styled.div`
   padding: 0 0 24px 0;
 
   .slick-track {

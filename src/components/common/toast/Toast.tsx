@@ -25,7 +25,7 @@ function Toast({ id, message, type }: ToastItem) {
   };
 
   return (
-    <Toaststyle className={isFadingOut ? "fade-out" : "fade-in"} onAnimationEnd={handleAnimationEnd}>
+    <ToastStyle className={isFadingOut ? "fade-out" : "fade-in"} onAnimationEnd={handleAnimationEnd}>
       <p>
         {type === "info" && <FaInfoCircle />}
         {type === "error" && <FaBan />}
@@ -34,11 +34,11 @@ function Toast({ id, message, type }: ToastItem) {
       <button onClick={handleRemoveToast}>
         <FaPlus />
       </button>
-    </Toaststyle>
+    </ToastStyle>
   );
 };
 
-const Toaststyle = styled.div`
+const ToastStyle = styled.div`
   @keyframes fade-in {
     from {
       opacity: 0;

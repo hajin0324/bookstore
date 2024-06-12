@@ -22,7 +22,7 @@ function Tabs({ children }: TabsProps) {
   const tabs = React.Children.toArray(children) as React.ReactElement<TabProps>[];
 
   return (
-    <Tabsstyle>
+    <TabsStyle>
       <div className="tab-header">
         {tabs.map((tab, index) => (
           <button 
@@ -34,11 +34,11 @@ function Tabs({ children }: TabsProps) {
         ))}
       </div>
       <div className="tab-content">{tabs[activeIndex]}</div>
-    </Tabsstyle>
+    </TabsStyle>
   );
 };
 
-const Tabsstyle = styled.div`
+const TabsStyle = styled.div`
   .tab-header {
     display: flex;
     gap: 2px;

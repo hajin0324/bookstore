@@ -21,7 +21,7 @@ const Star = (props: Pick<IBookReviewItem, "score">) => {
 
 function BookReviewItem({ review }: Props) {
   return (
-    <BookReviewItemstyle>
+    <BookReviewItemStyle>
       <header className="header">
         <div>
           <span>{review.userName}</span>
@@ -36,11 +36,11 @@ function BookReviewItem({ review }: Props) {
           {review.content}
         </p>
       </div>
-    </BookReviewItemstyle>
+    </BookReviewItemStyle>
   );
 };
 
-const BookReviewItemstyle = styled.div`
+const BookReviewItemStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;

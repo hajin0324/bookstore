@@ -16,7 +16,7 @@ function BookReviewAdd({ onAdd }: Props) {
   } = useForm<BookReviewItemWrite>();
 
   return (
-    <BookReviewAddstyle>
+    <BookReviewAddStyle>
       <form onSubmit={handleSubmit(onAdd)}>
         <fieldset>
           <textarea {...register("content", { required: true })}></textarea>
@@ -35,11 +35,11 @@ function BookReviewAdd({ onAdd }: Props) {
         </div>
         <Button size="medium" scheme="primary">작성하기</Button>
       </form>
-    </BookReviewAddstyle>
+    </BookReviewAddStyle>
   );
 };
 
-const BookReviewAddstyle = styled.div`
+const BookReviewAddStyle = styled.div`
   form {
     display: flex;
     flex-direction: column;
